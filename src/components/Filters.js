@@ -1,5 +1,5 @@
 import { Form, Button } from 'react-bootstrap'
-import {useState} from 'react';
+import { useState } from 'react';
 import Rating from './Rating';
 
 const Filters = () => {
@@ -27,6 +27,7 @@ const Filters = () => {
                     id={`inline-2`}
                 />
             </span>
+            <br />
             <span>
                 <Form.Check
                     inline
@@ -37,7 +38,7 @@ const Filters = () => {
                 />
             </span>
             <span>
-            <Form.Check
+                <Form.Check
                     inline
                     label='Fast Delivery Only'
                     name='group1'
@@ -45,10 +46,12 @@ const Filters = () => {
                     id={`inline-4`}
                 />
             </span>
+            <br />
             <span>
-                <label style={{ paddingRight: 10}}>Rating</label>
-                <Rating rating={rate} onClick={(i) => setRate(i+1)} style={{ cursor: 'pointer' }}/>
+                <label style={{ paddingRight: 10 }}>Rating</label>
+                <Rating rating={rate} onClick={(i) => setRate(i + 1)} style={{ cursor: 'pointer' }} />
             </span>
+            <br />
             <Button variant="light">Clear Filters</Button>
         </div>
     )
