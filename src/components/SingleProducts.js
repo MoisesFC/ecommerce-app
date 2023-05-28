@@ -1,7 +1,14 @@
 import { Card, Button } from 'react-bootstrap';
 import Rating from './Rating';
+import { CartState } from '../context/Context';
 
 const SingleProduct = ({ product }) => {
+
+    const {
+        state: { cart },
+        dispatch,
+    } = CartState();
+
     return (
         <div className="products">
             <Card>
@@ -16,12 +23,38 @@ const SingleProduct = ({ product }) => {
                             <div>4 day Delivery</div>
                         )}
                         <Rating rating={product.rating + 1} />
-                        <br/>
-                        <Button variant='danger'>Remove from Cart</Button>
-                        <Button disabled={!product.inStock}>
-                            {!product.inStock ? 'Out of Stock' : 'Add to Cart'}
-                            </Button>
                     </Card.Subtitle>
+                    {
+                        cart.some(p => p.id === product.id) ? (
+                            <Button
+                                variant="danger"
+                                onClick={() =>
+                                    dispatch({
+                                        type: "REMOVE_FROM_CART",
+                                        payload: product,
+                                    })
+                                }
+                            >
+                                Remove from Cart
+                            </Button>
+                        ) : (
+                            <Button
+                                onClick={() =>
+                                    dispatch({
+                                        type: "ADD_TO_CART",
+                                        payload: product,
+                                    })
+                                }
+                                disabled={!product.inStock}
+                            >
+                                {!product.inStock ? "Out of Stock" : "Add to Cart"}
+                            </Button>
+                        )
+
+                    }
+
+
+
                 </Card.Body>
             </Card>
         </div>
