@@ -50,7 +50,7 @@ const Header = () => {
                                             <img src={product.image} className='cartItemImg' alt={product.name} />
                                             <div className='cartItemDetail'>
                                                 <span>{product.name}</span>
-                                                <span>${product.price.split('.')[0]}</span>
+                                                <span>${product.price.toLocaleString()}</span>
                                             </div>
                                             <AiFillDelete
                                                 fontSize='20px'

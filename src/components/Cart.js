@@ -14,8 +14,9 @@ const Cart = () => {
   const [total, setTotal] = useState();
 
   useEffect(() => {
-    setTotal(cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0))
-  }, [cart])
+    const totalPrice = cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0);
+    setTotal(totalPrice.toLocaleString());
+  }, [cart]);
 
   return (
     <div className='home'>
@@ -32,7 +33,7 @@ const Cart = () => {
                     <span>{product.name}</span>
                   </Col>
                   <Col md={2}>
-                    {product.price}
+                  ${product.price.toLocaleString()}
                   </Col>
                   <Col md={2}>
                     <Rating disabled onClick={() => { }} rating={product.rating} />
