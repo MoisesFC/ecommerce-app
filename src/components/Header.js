@@ -4,7 +4,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { CartState } from '../context/Context';
 import { AiFillDelete } from 'react-icons/ai';
-
+import techTempleLogo from '../assets/images/techTempleLogo.png';
 
 const Header = () => {
 
@@ -18,10 +18,21 @@ const Header = () => {
 
     return (
 
-        <Navbar bg='dark' variant='dark' style={{ height: 80 }}>
+        <Navbar bg='dark' variant='dark' style={{
+            height: 80,
+            backgroundImage: 'linear-gradient(to right, #0066CC, #000000)',
+          }}>
             <Container>
                 <Navbar.Brand>
-                    <Link to="/">Shopping Cart</Link>
+                <Nav.Link to="/" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>            
+            <img
+              src={techTempleLogo}
+              alt="Logo"
+              className="logo-img"
+              style={{width: 60, paddingRight: 7}}
+            />
+                Tech Temple
+            </Nav.Link>
                 </Navbar.Brand>
                 <Navbar.Text className='search'>
                     <FormControl
