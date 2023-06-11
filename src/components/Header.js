@@ -1,4 +1,5 @@
 import React from 'react'
+// import { Link } from 'react-router-dom';
 import { Navbar, Container, FormControl, Nav, Dropdown, Badge, Button } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -24,7 +25,7 @@ const Header = () => {
           }}>
             <Container>
                 <Navbar.Brand>
-                <Nav.Link to="/" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>            
+                <Nav.Link as={Link} to="/home" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>            
             <img
               src={techTempleLogo}
               alt="Logo"

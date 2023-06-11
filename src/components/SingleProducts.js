@@ -34,9 +34,19 @@ const SingleProduct = ({ prod }) => {
       <Card>
         <Row noGutters>
           <Col xs={4}>
-            <Card.Img variant="top" src={prod.image} alt={prod.name} style={{width: '70%'}} />
+            <Card.Img variant="top" src={prod.image} alt={prod.name} style={{ width: '70%' }} />
           </Col>
-          <Col xs={8}>
+          <Col xs={4} className="d-flex flex-column align-items-center justify-content-center">
+            {/* Add new column for description */}
+            <Row>
+              <Card.Text>{prod.description} </Card.Text>
+            </Row>
+            <Row className="justify-content-center">
+              <Rating rating={prod.rating} style={{ color: 'orange', padding: 7 }}/>
+            </Row>
+          </Col>
+          <Col xs={4}>
+            {/* Original column with the rest of the items */}
             <Card.Body>
               <Card.Title>{prod.name}</Card.Title>
               <Card.Subtitle style={{ paddingBottom: 10 }}>
@@ -46,7 +56,6 @@ const SingleProduct = ({ prod }) => {
                 ) : (
                   <div>4 day Delivery</div>
                 )}
-                <Rating rating={prod.rating} />
               </Card.Subtitle>
               {isInCart ? (
                 <div>
@@ -61,8 +70,8 @@ const SingleProduct = ({ prod }) => {
                   >
                     Remove from Cart
                   </Button>
-                  <div className="d-flex justify-content-center" style={{padding: '9px'}}>
-                  <Form.Control
+                  <div className="d-flex justify-content-center" style={{ padding: '9px' }}>
+                    <Form.Control
                       as="input"
                       type="number"
                       value={cart.find((p) => p.id === prod.id)?.qty || 1}
@@ -91,6 +100,7 @@ const SingleProduct = ({ prod }) => {
           </Col>
         </Row>
       </Card>
+
     </div>
   );
 };
