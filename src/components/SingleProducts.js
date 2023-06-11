@@ -34,7 +34,7 @@ const SingleProduct = ({ prod }) => {
       <Card>
         <Row noGutters>
           <Col xs={4}>
-            <Card.Img variant="top" src={prod.image} alt={prod.name} style={{ width: '70%' }} />
+            <Card.Img variant="top" src={prod.image} alt={prod.name} style={{ width: '60%' }} />
           </Col>
           <Col xs={4} className="d-flex flex-column align-items-center justify-content-center">
             {/* Add new column for description */}

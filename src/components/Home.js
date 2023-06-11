@@ -62,8 +62,10 @@ const Home = () => {
                     }}
                 />
             </div>
-            <div className='home'>
-                {/* <Filters /> */}
+            <div className=''>
+            <div className="d-flex justify-content-center bg-gray" style={{ padding: '9px' }}>
+                <Filters />
+                </div>
                 <div className='productContainer'>
                     {transformProducts().map((prod) => (
                         <SingleProduct prod={prod} key={prod.id} />
