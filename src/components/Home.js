@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormControl, Row } from 'react-bootstrap';
 import { CartState } from '../context/Context';
 import SingleProduct from './SingleProducts';
 import Filters from './Filters';
@@ -10,6 +11,8 @@ const Home = () => {
         state: { products },
         productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
     } = CartState();
+
+    const { productDispatch } = CartState();
 
     const transformProducts = () => {
         let sortedProducts = products;
@@ -45,14 +48,29 @@ const Home = () => {
     console.log(products);
 
     return (
-        <div className='home'>
-            <Filters />
-            <div className='productContainer'>
-                {transformProducts().map((prod) => (
-                    <SingleProduct prod={prod} key={prod.id} />
-                ))}
+        <>
+            <div className="d-flex justify-content-center bg-gray" style={{ padding: '9px' }}>
+                <FormControl
+                    style={{ width: 500 }}
+                    placeholder='Search Product'
+                    className='m-auto'
+                    onChange={(e) => {
+                        productDispatch({
+                            type: 'FILTER_BY_SEARCH',
+                            payload: e.target.value,
+                        });
+                    }}
+                />
             </div>
-        </div>
+            <div className='home'>
+                {/* <Filters /> */}
+                <div className='productContainer'>
+                    {transformProducts().map((prod) => (
+                        <SingleProduct prod={prod} key={prod.id} />
+                    ))}
+                </div>
+            </div>
+        </>
     )
 }
 

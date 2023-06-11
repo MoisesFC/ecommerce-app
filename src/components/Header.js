@@ -36,17 +36,6 @@ const Header = () => {
             </Nav.Link>
                 </Navbar.Brand>
                 <Navbar.Text className='search'>
-                    <FormControl
-                        style={{ width: 500 }}
-                        placeholder='Search Product'
-                        className='m-auto'
-                        onChange={(e) => {
-                            productDispatch({
-                                type: 'FILTER_BY_SEARCH',
-                                payload: e.target.value,
-                            });
-                        }}
-                    />
                 </Navbar.Text>
                 <Nav>
                     <Dropdown alignRight>
