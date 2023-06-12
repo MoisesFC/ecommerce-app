@@ -96,7 +96,7 @@ const Filters = () => {
                                         payload: i + 1,
                                     })
                                 }
-                                style={{ cursor: "pointer", color: 'orange' }}
+                                style={{ cursor: "pointer", color: 'white' }}
                             />
                         </span>
                     </Col>

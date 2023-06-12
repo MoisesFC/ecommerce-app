@@ -25,7 +25,7 @@ const Header = () => {
           }}>
             <Container>
                 <Navbar.Brand>
-                <Nav.Link as={Link} to="/home" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>            
+                <Nav.Link as={Link} to="/" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>            
             <img
               src={techTempleLogo}
               alt="Logo"

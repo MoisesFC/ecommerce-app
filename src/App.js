@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Cart from './components/Cart';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -10,10 +11,11 @@ function App() {
       <Header />
       <div className="App">
         <Routes>
-        <Route path="/home" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/cart" element={<Cart/>} />
         </Routes>
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
