@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Container, Nav, Dropdown, Badge, Button } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { CartState } from '../context/Context';
 import { AiFillDelete } from 'react-icons/ai';
 import techTempleLogo from '../assets/images/techTempleLogo.png';
@@ -28,9 +28,20 @@ const Header = () => {
           />
           Tech Temple
         </Navbar.Brand>
-        <Nav.Link as={Link} to="/mobile">
-          Mobile
-        </Nav.Link>
+        <Nav>
+          <Nav.Link as={NavLink} to="/mobile" activeClassName="selected">
+            Mobile
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="/computing" activeClassName="selected">
+            Computing
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="/appliances" activeClassName="selected">
+            Appliances
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="/videogames" activeClassName="selected">
+            Videogames
+          </Nav.Link>
+        </Nav>
         <Nav>
           <Dropdown alignRight>
             <Dropdown.Toggle variant="success">

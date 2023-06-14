@@ -3,7 +3,8 @@ import { FormControl, Row } from 'react-bootstrap';
 import { CartState } from '../context/Context';
 import SingleProduct from '../components/SingleProducts';
 import Filters from '../components/Filters';
-import '../components/styles.css'
+import '../components/styles.css';
+import { PRODUCTS } from '../products/products';
 
 const Home = () => {
 
@@ -13,9 +14,9 @@ const Home = () => {
     } = CartState();
 
     const { productDispatch } = CartState();
-
+    let sortedProducts = PRODUCTS.filter((prod) => prod.featured === true)
     const transformProducts = () => {
-        let sortedProducts = products;
+        // let sortedProducts = products;
 
         if (sort) {
             sortedProducts = sortedProducts.sort((a, b) =>
@@ -67,6 +68,7 @@ const Home = () => {
                 <Filters />
                 </div>
                 <div className='productContainer'>
+                <h2>Today's Featured Products</h2>
                     {transformProducts().map((prod) => (
                         <SingleProduct prod={prod} key={prod.id} />
                     ))}

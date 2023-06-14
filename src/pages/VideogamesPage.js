@@ -7,7 +7,7 @@ import Rating from '../components/Rating';
 import { CartState } from '../context/Context';
 import Filters from '../components/Filters';
 
-const MobilePage = () => {
+const VideogamesPage = () => {
 
     const {
         state: { products },
@@ -15,7 +15,7 @@ const MobilePage = () => {
     } = CartState();
 
     const { productDispatch } = CartState();
-    let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'mobile')
+    let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'videogames')
     const transformProducts = () => {
         
 
@@ -69,7 +69,7 @@ const MobilePage = () => {
                     <Filters />
                 </div>
                 <div className='productContainer'>
-                <h3>Mobile Devices</h3>
+                <h3>Videogames</h3>
                     {transformProducts().map((prod) => (
                         <SingleProduct prod={prod} key={prod.id} />
                     ))}
@@ -79,4 +79,4 @@ const MobilePage = () => {
     )
 };
 
-export default MobilePage;
+export default VideogamesPage;

@@ -7,7 +7,7 @@ import Rating from '../components/Rating';
 import { CartState } from '../context/Context';
 import Filters from '../components/Filters';
 
-const MobilePage = () => {
+const AppliancePage = () => {
 
     const {
         state: { products },
@@ -15,7 +15,7 @@ const MobilePage = () => {
     } = CartState();
 
     const { productDispatch } = CartState();
-    let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'mobile')
+    let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'appliance')
     const transformProducts = () => {
         
 
@@ -68,8 +68,11 @@ const MobilePage = () => {
                 <div className="d-flex justify-content-center bg-gray" style={{ padding: '9px' }}>
                     <Filters />
                 </div>
+                
+                
+                
                 <div className='productContainer'>
-                <h3>Mobile Devices</h3>
+                <h3>Appliance Products</h3>
                     {transformProducts().map((prod) => (
                         <SingleProduct prod={prod} key={prod.id} />
                     ))}
@@ -79,4 +82,4 @@ const MobilePage = () => {
     )
 };
 
-export default MobilePage;
+export default AppliancePage;
