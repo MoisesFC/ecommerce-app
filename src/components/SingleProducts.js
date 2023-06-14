@@ -37,19 +37,19 @@ const SingleProduct = ({ prod }) => {
             <Card.Img variant="top" src={prod.image} alt={prod.name} style={{ width: '60%' }} />
           </Col>
           <Col xs={4} className="d-flex flex-column align-items-center justify-content-center">
-            {/* Add new column for description */}
+            <Row>
+              <Card.Title>{prod.name}</Card.Title>
+            </Row>
             <Row>
               <Card.Text>{prod.description} </Card.Text>
             </Row>
             <Row className="justify-content-center">
-              <Rating rating={prod.rating} style={{ color: 'orange', padding: 7 }}/>
+              <Rating rating={prod.rating} style={{ color: 'orange', padding: 7 }} />
             </Row>
           </Col>
           <Col xs={4}>
-            {/* Original column with the rest of the items */}
-            <Card.Body>
-              <Card.Title>{prod.name}</Card.Title>
-              <Card.Subtitle style={{ paddingBottom: 10 }}>
+            <Card.Body >
+              <Card.Subtitle style={{ margin: 50}}>
                 <span>${prod.price.toLocaleString()}</span>
                 {prod.fastDelivery ? (
                   <div>Fast Delivery</div>
