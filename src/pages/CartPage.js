@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { CartState } from '../context/Context';
 import { ListGroup, Button, Row, Col, Form, Image } from 'react-bootstrap';
-import Rating from './Rating';
+import Rating from '../components/Rating';
 import { AiFillDelete } from 'react-icons/ai'
 
 const Cart = () => {

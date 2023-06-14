@@ -2,7 +2,6 @@ import { PRODUCTS } from '../products/products';
 import SingleProduct from "../components/SingleProducts";
 import { Container } from "react-bootstrap";
 import React from "react";
-import DisplayProducts from "../components/DisplayProducts";
 import { Card, Button, Row, Col, Form, FormControl } from 'react-bootstrap';
 import Rating from '../components/Rating';
 import { CartState } from '../context/Context';
@@ -17,9 +16,9 @@ const MobilePage = () => {
     } = CartState();
 
     const { productDispatch } = CartState();
-
+    let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'mobile')
     const transformProducts = () => {
-        let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'mobile')
+        
 
         if (sort) {
             sortedProducts = sortedProducts.sort((a, b) =>
@@ -49,7 +48,7 @@ const MobilePage = () => {
         return sortedProducts;
     };
 
-    console.log(products);
+    console.log(sortedProducts);
 
     return (
         <>

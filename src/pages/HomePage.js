@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormControl, Row } from 'react-bootstrap';
 import { CartState } from '../context/Context';
-import SingleProduct from './SingleProducts';
-import Filters from './Filters';
-import './styles.css'
+import SingleProduct from '../components/SingleProducts';
+import Filters from '../components/Filters';
+import '../components/styles.css'
 
 const Home = () => {
 

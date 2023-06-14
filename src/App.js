@@ -1,11 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import Home from './components/Home';
-import Cart from './components/Cart';
+import Home from './pages/HomePage';
+import Cart from './pages/CartPage';
 import Footer from './components/Footer';
 import MobilePage from './pages/MobilePage';
-import Filters from './components/Filters';
 
 function App() {
   return (
