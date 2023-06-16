@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Container, Nav, Dropdown, Badge, Button } from 'react-bootstrap';
+import { Navbar, Container, Nav, Dropdown, Badge, Button, FormControl } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
 import { CartState } from '../context/Context';
@@ -40,6 +40,9 @@ const Header = () => {
           </Nav.Link>
           <Nav.Link as={NavLink} to="/videogames" activeClassName="selected">
             Videogames
+          </Nav.Link>
+          <Nav.Link as={NavLink} to="/accesories" activeClassName="selected">
+            Accesories
           </Nav.Link>
         </Nav>
         <Nav>

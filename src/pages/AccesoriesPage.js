@@ -5,12 +5,12 @@ import { CartState } from '../context/Context';
 import Searchbar from '../components/Searchbar';
 import { transformProducts } from '../components/transformProducts';
 
-const AppliancePage = () => {
+const AccessoriesPage = () => {
   const {
     productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
   } = CartState();
 
-  let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'appliance');
+  let sortedProducts = PRODUCTS.filter((prod) => prod.category === 'accessories');
 
   console.log(sortedProducts);
 
@@ -19,7 +19,7 @@ const AppliancePage = () => {
       <Searchbar />
       <div className=''>
         <div className='productContainer'>
-          <h3>Appliances</h3>
+          <h3>Accesories</h3>
           {transformProducts(sortedProducts, sort, byStock, byFastDelivery, byRating, searchQuery).map(
             (prod) => (
               <SingleProduct prod={prod} key={prod.id} />
@@ -31,4 +31,4 @@ const AppliancePage = () => {
   );
 };
 
-export default AppliancePage;
+export default AccessoriesPage;

@@ -8,12 +8,14 @@ import MobilePage from './pages/MobilePage';
 import ComputingPage from './pages/ComputingPage';
 import AppliancePage from './pages/AppliancePage';
 import VideogamesPage from './pages/VideogamesPage';
+import AccessoriesPage from './pages/AccesoriesPage';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <div className="App">
+    
+      <BrowserRouter>
+        <Header />
+        <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
@@ -21,10 +23,12 @@ function App() {
           <Route path='/computing' element={<ComputingPage />} />
           <Route path='/appliances' element={<AppliancePage />} />
           <Route path='/videogames' element={<VideogamesPage />} />
+          <Route path='/accesories' element={<AccessoriesPage />} />
         </Routes>
-      </div>
-      <Footer />
-    </BrowserRouter>
+        </div>
+        <Footer />
+      </BrowserRouter>
+
   );
 }
 

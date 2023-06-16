@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { FormControl, Row } from 'react-bootstrap';
 import { CartState } from '../context/Context';
@@ -5,14 +6,15 @@ import SingleProduct from '../components/SingleProducts';
 import Filters from '../components/Filters';
 import '../components/styles.css';
 import { PRODUCTS } from '../products/products';
-import Searchbar from '../components/Searchbar';
 
-const Home = () => {
+
+const Searchbar = () => {
 
     const {
         state: { products },
         productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
     } = CartState();
+
 
     const { productDispatch } = CartState();
     let sortedProducts = PRODUCTS.filter((prod) => prod.featured === true)
@@ -47,21 +49,26 @@ const Home = () => {
         return sortedProducts;
     };
 
-    console.log(products);
-
     return (
-        <>
-                <Searchbar/>
-            <div className=''>
-                <div className='productContainer'>
-                <h2>Today's Featured Products</h2>
-                    {transformProducts().map((prod) => (
-                        <SingleProduct prod={prod} key={prod.id} />
-                    ))}
-                </div>
+        <div>
+            <div className="d-flex justify-content-center " style={{ padding: '9px', backgroundColor: '#66ccff' }}>
+                <FormControl
+                    style={{ width: 500 }}
+                    placeholder='Search Product'
+                    className='m-auto'
+                    onChange={(e) => {
+                        productDispatch({
+                            type: 'FILTER_BY_SEARCH',
+                            payload: e.target.value,
+                        });
+                    }}
+                />
             </div>
-        </>
+            <div className="d-flex justify-content-center" style={{ padding: '9px', backgroundColor: '#66ccff' }}>
+                <Filters />
+                </div>
+        </div>
     )
 }
 
-export default Home
+export default Searchbar;
