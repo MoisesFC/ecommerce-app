@@ -34,14 +34,14 @@ const SingleProduct = ({ prod }) => {
       <Card>
         <Row noGutters>
           <Col xs={4}>
-            <Card.Img variant="top" src={prod.image} alt={prod.name} style={{ width: '60%' }} />
+            <Card.Img variant="top" src={prod.image} alt={prod.name} style={{ width: '50%', height: 'auto' }} />
           </Col>
           <Col xs={4} className="d-flex flex-column align-items-center justify-content-center">
             <Row>
               <Card.Title>{prod.name}</Card.Title>
             </Row>
             <Row>
-              <Card.Text>{prod.description} </Card.Text>
+              <Card.Text className="d-none d-md-block">{prod.description} </Card.Text>
             </Row>
             <Row className="justify-content-center">
               <Rating rating={prod.rating} style={{ color: 'orange', padding: 7 }} />
@@ -50,7 +50,7 @@ const SingleProduct = ({ prod }) => {
           <Col xs={4}>
             <Card.Body >
               <Card.Subtitle style={{ margin: 50}}>
-                <span>${prod.price.toLocaleString()}</span>
+                <span id='price' class='dynamic-font'>${prod.price.toLocaleString()}</span>
                 {prod.fastDelivery ? (
                   <div>Fast Delivery</div>
                 ) : (

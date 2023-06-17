@@ -35,7 +35,7 @@ const Home = () => {
 
         if (byRating) {
             sortedProducts = sortedProducts.filter(
-                (prod) => prod.ratings >= byRating
+                (prod) => prod.rating >= byRating
             );
         };
 

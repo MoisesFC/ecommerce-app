@@ -12,12 +12,11 @@ import AccessoriesPage from './pages/AccesoriesPage';
 
 function App() {
   return (
-    
       <BrowserRouter>
         <Header />
         <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path='/mobile' element={<MobilePage />} />
           <Route path='/computing' element={<ComputingPage />} />
