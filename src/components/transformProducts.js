@@ -14,7 +14,7 @@ export const transformProducts = (sortedProducts, sort, byStock, byFastDelivery,
     }
   
     if (byRating) {
-      sortedProducts = sortedProducts.filter((prod) => prod.ratings >= byRating);
+      sortedProducts = sortedProducts.filter((prod) => prod.rating >= byRating);
     }
   
     if (searchQuery) {
@@ -25,4 +25,3 @@ export const transformProducts = (sortedProducts, sort, byStock, byFastDelivery,
   
     return sortedProducts;
   };
-  
