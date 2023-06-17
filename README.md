@@ -17,3 +17,7 @@
 ### A few items have been added to the cart, a cart dropdown button displaying the products that have been added is shown on the top right corner as well.
 
 ![title](./src/assets/images/screenCAptuerMobilePage.png)
+
+### This last screenshot shows the page for the cart, here we see the items that have been added to the cart listed, as well as a total amount on the left side of the screen
+
+![title](./src/assets/images/screencaptureCartPage.png)
