@@ -113,3 +113,9 @@
     font-size: 20px; /* Font size for smaller screens */
   }
 }
+
+@media (max-width: 575.98px) {
+  .hide-row {
+    display: none !important; /* Use !important to ensure the CSS rule takes precedence */
+  }
+}
