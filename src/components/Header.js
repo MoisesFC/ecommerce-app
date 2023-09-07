@@ -27,7 +27,7 @@ function Header() {
               <img
                   src={techTempleLogo}
                   style={{ width: 60 }} />
-              <strong>Tech Tmeple</strong>
+              <strong>Tech Temple</strong>
           </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
