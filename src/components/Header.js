@@ -23,7 +23,7 @@ function Header() {
       <Navbar bg='dark' expand="lg" variant='dark'
       style={{ backgroundImage: 'linear-gradient(to right, #0066CC, #000000)' }}>
       <Container>
-          <Navbar.Brand href="/home">
+          <Navbar.Brand href="/">
               <img
                   src={techTempleLogo}
                   style={{ width: 60 }} />
